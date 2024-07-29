@@ -1,9 +1,6 @@
 # Use the official Node.js 18 image as a base image
 FROM node:20.10.0-alpine
 
-# Use the official Node.js 21.7.1 image as a base image
-FROM node:21.7.1-alpine
-
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -23,5 +20,5 @@ RUN npm run build
 EXPOSE 3001
 
 # Start the NestJS application
-CMD ["npm", "run", "start:prod"]
+CMD ["npm", "run", "start"]
 
