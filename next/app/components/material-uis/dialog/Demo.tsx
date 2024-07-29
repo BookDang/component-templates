@@ -1,7 +1,7 @@
 'use client'
 
-import CDialog from '@/app/components/material-ui/dialog/CDialog'
-import useDialogStore from '@/app/components/material-ui/dialog/useDialogStore'
+import CDialog from '@/app/components/material-uis/dialog/CDialog'
+import useDialogStore from '@/app/components/material-uis/dialog/useDialogStore'
 
 const DemoDialog = () => {
   const openRender = useDialogStore(state => state.openRender)
@@ -12,10 +12,10 @@ const DemoDialog = () => {
       {isRender && (
         <CDialog
           headerTitle="Demo Dialog"
-          cancelText="Cancel"
-          submitText="Submit"
-          deleteText="Delete"
-          cancelAction={() => console.log('Cancel')}
+          otherLabel="Cancel"
+          submitLabel="Submit"
+          deleteLabel="Delete"
+          otherAction={() => console.log('Cancel')}
           submitAction={() => console.log('Submit')}
           deleteAction={() => console.log('Delete')}
         >

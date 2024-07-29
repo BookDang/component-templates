@@ -1,0 +1,8 @@
+# compiled output
+next/dist
+next/node_modules
+next/build
+
+nest/dist
+nest/node_modules
+nest/build

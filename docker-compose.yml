@@ -1,8 +1,7 @@
-version: 3.9
+version: "3.9"
 
 services:
   nextjs:
-    container_name: nextjs
     build:
       context: .
       dockerfile: .docker/next/Dockerfile
@@ -19,7 +18,6 @@ services:
       - mongo
 
   nestjs:
-    container_name: nestjs
     build:
       context: .
       dockerfile: .docker/nest/Dockerfile
@@ -36,24 +34,23 @@ services:
       - mongo
 
   mongo:
-    container_name: mongo
     image: mongo:4.4
     ports:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
 
-  nginx:
-    container_name: nginx
-    build:
-      context: .
-      dockerfile: .docker/nginx/Dockerfile
-    ports:
-      - "80:80"
-    depends_on:
-      - nextjs
-      - nestjs
-      - mongo
+  # nginx:
+  #   container_name: nginx
+  #   build:
+  #     context: .
+  #     dockerfile: .docker/nginx/Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - nextjs
+  #     - nestjs
+  #     - mongo
 
 volumes:
   mongo-data:
