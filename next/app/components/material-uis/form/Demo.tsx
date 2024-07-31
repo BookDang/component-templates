@@ -48,7 +48,7 @@ const Demo = () => {
   const isRender = useDialogStore(state => state.isRender)
   return (
     <>
-      <button onClick={openRender}>Open Dialog</button>
+      <button onClick={openRender}>Open My Dialog</button>
       {isRender && <NestedForm />}
     </>
   )

@@ -9,9 +9,11 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./next:/app
+      - ./next:/app:delegated
       - /app/node_modules
-    command: npm run start
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    command: npm run dev
     depends_on:
       - mongo
 
