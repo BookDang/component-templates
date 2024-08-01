@@ -24,7 +24,7 @@ type FormDataType = {
 }
 
 const inintialData: FormDataType = {
-  name: 'John Doe',
+  name: 'John Smith',
   age: 25,
   profession: 'Developer',
   addresses: [

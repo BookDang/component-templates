@@ -11,8 +11,8 @@ services:
     volumes:
       - ./next:/app:delegated
       - /app/node_modules
-    environment:
-      - CHOKIDAR_USEPOLLING=true
+    # environment:
+    #   - CHOKIDAR_USEPOLLING=true
     command: npm run dev
     depends_on:
       - mongo
