@@ -11,7 +11,7 @@ import CFieldArrayControl from '@/app/components/material-uis/form/CFieldArray/C
 const professions = ['Developer', 'Designer', 'Manager', 'Tester', 'DevOps']
 const professionConsts = [...professions.map(profession => profession)] as const
 
-type addressesType = {
+type AddressesType = {
   ward?: string
   district?: string
 }
@@ -20,7 +20,7 @@ type FormDataType = {
   name: string
   age: number
   profession: (typeof professionConsts)[number]
-  addresses: addressesType[]
+  addresses: AddressesType[]
 }
 
 const inintialData: FormDataType = {
@@ -86,7 +86,7 @@ export const NestedForm: React.FC<NestedFormProps> = props => {
             options={professions}
             rules={{ required: 'This field is required' }}
           />
-          <CFieldArrayControl<addressesType>
+          <CFieldArrayControl<AddressesType>
             defaultAddValue={{
               ward: '',
               district: '',
